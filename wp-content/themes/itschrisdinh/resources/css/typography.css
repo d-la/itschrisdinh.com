@@ -1,0 +1,18 @@
+@utility heading-lg {
+  font-family: 'adobe-handwriting-ernie', 'Helvetica-Neue', 'sans-serif';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+@utility text-base {
+  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-transform: none;
+  text-decoration: none;
+}

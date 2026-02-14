@@ -1,0 +1,25 @@
+@import "tailwindcss" theme(static);
+@source "../views/";
+@source "../../app/";
+
+/* Libraries */
+@import "@splidejs/splide/css";
+
+/* Our CSS */
+@import "./typography.css";
+@import "./homepage.css";
+@import "./navigation.css";
+
+/* Prevent layout shift when the body has the .menu-overlay-active class */
+html {
+  scrollbar-gutter: stable;
+}
+
+
+body {
+  @apply bg-black text-white;
+}
+
+body.menu-overlay-active {
+  @apply overflow-hidden;
+}

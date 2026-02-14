@@ -1,0 +1,49 @@
+<?php
+
+namespace App\View\Composers;
+
+use Roots\Acorn\View\Composer;
+
+//backend data fetch for the data that will be displayed on the homepage
+
+class FrontPage extends Composer {
+    /**
+     * List of views served by this composer.
+     *
+     * @var array
+     */
+    protected static $views = [
+        'front-page',
+    ];
+
+    private function getHomepageSliderData() {
+        return get_field('homepage_slides');
+    }
+
+    private function getHomepageSliderSettings() {
+        return get_field('homepage_slider_settings-settings');
+    }
+
+    /**
+     * Data to be passed to view before rendering.
+     *
+     * @return array
+     */
+    public function with() {
+        return [
+            'siteName' => $this->siteName(),
+            'test' => 'look at that',
+            'slides' => $this->getHomepageSliderData(),
+            'sliderSettings' => $this->getHomepageSliderSettings(),
+        ];
+    }
+
+    /**
+     * Returns the site name.
+     *
+     * @return string
+     */
+    public function siteName() {
+        return get_bloginfo('name', 'display');
+    }
+}

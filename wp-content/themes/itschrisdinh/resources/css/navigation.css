@@ -1,0 +1,7 @@
+/* #menu-overlay.active {
+  @apply transition-all duration-300 opacity-100 z-40;
+}
+ */
+#menu-overlay.active {
+  @apply opacity-100 pointer-events-auto;
+}
