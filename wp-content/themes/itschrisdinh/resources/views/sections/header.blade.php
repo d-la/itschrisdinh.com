@@ -1,4 +1,4 @@
-<header class="banner relative header max-w-7xl mx-auto px-5 min-h-[150px] flex justify-between items-center z-50">
+<header class="banner relative header container min-h-[150px] flex justify-between items-center z-50">
   <a href="{{ home_url('/') }}" class="header__website-logo brand component heading-lg text-3xl md:text-4xl lg:text-5xl text-white mt-[10px]">
       Chris D.
   </a>
@@ -11,7 +11,7 @@
 </header>
 @unless (empty($menuItems))
   <div id="menu-overlay" class="fixed pointer-events-none opacity-0 inset-0 bg-neutral-900 transition-opacity duration-175 ease-in-out z-40">
-    <div class="max-w-7xl mx-auto flex h-full flex-col-reverse lg:flex-row justify-between items-center px-5">
+    <div class="container flex h-full flex-col-reverse lg:flex-row justify-between items-center">
       <nav class="w-full flex flex-col justify-end items-end text-white lg:justify-start lg:items-start z-20" aria-label="Primary Navigation">
           <ul class="flex flex-col w-full items-end lg:items-start">
             @foreach ($menuItems as $menuItem)

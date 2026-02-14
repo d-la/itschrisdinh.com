@@ -1,4 +1,4 @@
-<footer class="content-info mt-36 mb-8 max-w-7xl mx-auto px-5 {{ $footerClasses }}">
+<footer class="content-info mt-36 mb-8 container {{ $footerClasses }}">
   <div class="mx-auto my-6 md:my-8  border-t border-white w-full"></div>
 
   <div class="relative mx-auto w-full flex flex-row justify-between items-center text-white space-y-0">
