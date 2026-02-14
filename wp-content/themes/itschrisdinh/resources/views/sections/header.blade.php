@@ -29,24 +29,44 @@
               </li>
             @endforeach
           </ul>
+          <ul class="header-socials flex flex-row gap-5 items-start">
+            @if (is_array($instagramLink) && !empty($instagramLink['url']))
+              <li>
+                <a
+                  href="{{ $instagramLink['url'] }}"
+                  class="text-2xl md:text-4xl text-base transition-transform duration-300 ease-in-out group"
+                  target="{{ $instagramLink['target'] ?: '_self' }}"
+                  aria-label="View Chris Dinh's instagram account"
+                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram size-6 group-hover:scale-105 group-focus:scale-105 group-focus-within:scale-105 transition-all duration-300" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M16.5 7.5l0 .01" />
+                  </svg>
+                </a>
+              </li>
+            @endif
+            @if (!empty($phoneNumber))
+              <li>
+                <a href="tel:{{ $phoneNumber }}" class="text-2xl md:text-4xl text-base transition-transform duration-300 ease-in-out group" aria-label="Call Chris Dinh">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 group-hover:scale-105 group-focus:scale-105 group-focus-within:scale-105 transition-all duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                  </svg>
+                </a>
+              </li>
+            @endif
+            @if (!empty($emailAddress))
+              <li>
+                <a href="mailto:{{ $emailAddress }}" class="text-2xl md:text-4xl text-base transition-transform duration-300 ease-in-out group" aria-label="Email Chris Dinh">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 group-hover:scale-105 group-focus:scale-105 group-focus-within:scale-105 transition-all duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                  </svg>
+                </a>
+              </li>
+            @endif
+          </ul>
       </nav>
-      <div class="w-full flex flex-col justify-start items-start pt-24 text-white whitespace-nowrap lg:w-1/2 lg:pr-48 z-20">
-        @if (is_array($instagramLink) && !empty($instagramLink['url']))
-            <a
-              href="{{ $instagramLink['url'] }}"
-              class="text-2xl md:text-4xl transition-transform duration-300 ease-in-out hover:scale-110"
-              target="{{ $instagramLink['target'] ?: '_self' }}"
-              >
-                {{ $instagramLink['title'] }}
-            </a>
-        @endif
-        @if (!empty($phoneNumber))
-            <a href="tel:{{ $phoneNumber }}" class="text-2xl md:text-4xl transition-transform duration-300 ease-in-out">{{ $phoneNumber }}</a>
-        @endif
-        @if (!empty($emailAddress))
-            <a href="mailto:{{ $emailAddress }}" class="text-2xl md:text-4xl transition-transform duration-300 ease-in-out">{{ $emailAddress }}</a>
-        @endif
-      </div>
     </div>
   </div>
 @endunless

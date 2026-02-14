@@ -79,7 +79,7 @@ class App extends Composer
     public function getInstagramLink()
     {
         $contactInformation = $this->getContactInformation();
-        return $contactInformation['instgram']['url'] ?? null;
+        return $contactInformation['instagram'] ?? null;
     }
 
     /**
