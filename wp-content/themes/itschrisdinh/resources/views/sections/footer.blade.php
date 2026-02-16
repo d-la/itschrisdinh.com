@@ -1,21 +1,9 @@
-<footer class="content-info mt-36 mb-8 container {{ $footerClasses }}">
-  <div class="mx-auto my-6 md:my-8  border-t border-white w-full"></div>
+<footer class="content-info mb-8 container {{ $footerClasses }}">
+  <div class="mx-auto my-6 border-t border-white w-full"></div>
 
   <div class="relative mx-auto w-full flex flex-row justify-between items-center text-white space-y-0">
-    @if ($phoneNumber)
-      <div class="footer-phoneumber w-full md:w-auto flex items-center">
-        <a href="tel:{{ $phoneNumber }}" class="flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110 focus-within:scale-110 focus:scale-110 text-base">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone md:hidden" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-            </svg>
-            <span class="hidden md:block">{{ $phoneNumber }}</span>
-        </a>
-      </div>
-    @endif
-
     @if ($instagramLink['url'])
-      <div class="footer-instagram-link relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 text-center flex items-center">
+      <div class="footer-instagram-link relative flex items-center">
         <a href="{{ $instagramLink['url'] }}" target="_blank" aria-label="Open Instagram link" class="flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110 focus-within:scale-110 focus:scale-110 text-base">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -28,7 +16,7 @@
     @endif
 
     @if ($emailAddress)
-      <div class="footer-email-address w-full md:w-auto flex items-center justify-end ml-auto">
+      <div class="footer-email-address flex items-center justify-end">
         <a href="mailto:{{ $emailAddress }}" class="flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-110 focus-within:scale-110 focus:scale-110 text-base">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail md:hidden" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
