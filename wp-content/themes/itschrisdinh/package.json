@@ -23,6 +23,8 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4"
+    "@splidejs/splide": "^4.1.4",
+    "gsap": "^3.12.5",
+    "mixitup": "^3.3.2"
   }
 }

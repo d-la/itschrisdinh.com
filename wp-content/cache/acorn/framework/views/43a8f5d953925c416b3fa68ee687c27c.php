@@ -10,7 +10,7 @@
     <?php (do_action('get_header')); ?>
     <?php (wp_head()); ?>
 
-    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js', 'resources/js/slider.js']); ?>
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js', 'resources/js/slider.js', 'resources/js/gallery-collections.js']); ?>
   </head>
 
   <body <?php (body_class('relative')); ?>>

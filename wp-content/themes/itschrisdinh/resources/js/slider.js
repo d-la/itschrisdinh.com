@@ -6,12 +6,10 @@ class Slider extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('Slider connected');
     this.initiateSplideSlider();
   }
 
   disconnectedCallback() {
-    console.log('Slider disconnected');
   }
 
   initiateSplideSlider = ( selector = '.splide' ) => {

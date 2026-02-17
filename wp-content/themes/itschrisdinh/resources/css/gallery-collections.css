@@ -1,0 +1,11 @@
+gallery-collections {
+  --spacing: 10px;
+}
+
+.gallery-collections__collection.gallery-collections__collection--active {
+  @apply border-b border-b-gray-400 border-solid;
+}
+
+.gallery-collections__collection:not(.gallery-collections__collection--active):hover {
+  @apply border-b-gray-400;
+}

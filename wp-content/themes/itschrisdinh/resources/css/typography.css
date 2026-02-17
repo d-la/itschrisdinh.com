@@ -7,6 +7,12 @@
   text-decoration: none !important;
 }
 
+@utility heading-base {
+  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
+
+  @apply font-normal text-6xl tracking-wide;
+}
+
 @utility text-base {
   font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
   font-weight: 400;
@@ -15,4 +21,10 @@
   line-height: 1.5;
   text-transform: none;
   text-decoration: none;
+}
+
+@utility filter-base {
+  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
+
+  @apply font-normal text-[16px] md:text-[18px] leading-[1.2] md:leading-1.5;
 }

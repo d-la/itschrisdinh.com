@@ -14,6 +14,7 @@ export default defineConfig({
         'resources/css/editor.css',
         'resources/js/editor.js',
         'resources/js/slider.js',
+        'resources/js/gallery-collections.js'
       ],
       refresh: true,
     }),
