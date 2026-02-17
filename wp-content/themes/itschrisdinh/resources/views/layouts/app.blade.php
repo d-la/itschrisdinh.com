@@ -10,7 +10,7 @@
     @php(do_action('get_header'))
     @php(wp_head())
 
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/slider.js', 'resources/js/gallery-collections.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/slider.js', 'resources/js/gallery-collections.js', 'resources/js/image-gallery.js', 'resources/js/image-gallery-lightbox.js'])
   </head>
 
   <body @php(body_class('relative'))>

@@ -9,15 +9,16 @@
 
 /* Our CSS */
 @import "./typography.css";
+@import "./cta.css";
 @import "./homepage.css";
 @import "./navigation.css";
 @import "./gallery-collections.css";
+@import "./image-gallery-lightbox.css";
 
 /* Prevent layout shift when the body has the .menu-overlay-active class */
 html {
   scrollbar-gutter: stable;
 }
-
 
 body {
   @apply bg-black text-white;

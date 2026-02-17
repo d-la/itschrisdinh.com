@@ -26,5 +26,11 @@
 @utility filter-base {
   font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
 
-  @apply font-normal text-[16px] md:text-[18px] leading-[1.2] md:leading-1.5;
+  @apply font-normal text-[16px] md:text-[18px] leading-[1.2] md:leading-normal;
+}
+
+@utility cta-base {
+  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
+
+  @apply font-normal text-[16px] leading-normal;
 }

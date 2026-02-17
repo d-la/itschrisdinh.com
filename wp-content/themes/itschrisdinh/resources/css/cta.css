@@ -1,0 +1,7 @@
+@utility cta {
+  @apply inline-block py-2 px-5 cursor-pointer rounded-[10px] cta-base;
+}
+
+@utility cta-primary {
+  @apply cta bg-neutral-900 text-white transition-all duration-300 hover:bg-neutral-800 focus:bg-neutral-800 focus-within:bg-neutral-800;
+}
