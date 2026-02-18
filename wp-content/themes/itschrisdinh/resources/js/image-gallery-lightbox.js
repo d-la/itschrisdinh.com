@@ -35,6 +35,7 @@ class ImageGalleryLightbox extends HTMLElement {
           index: parseInt(image?.dataset?.index),
           width: parseInt(image?.dataset?.width),
           height: parseInt(image?.dataset?.height),
+          caption: image?.dataset?.caption,
           src: image?.src,
         }
       });
@@ -89,14 +90,15 @@ class ImageGalleryLightbox extends HTMLElement {
     if (imageData) {
       const { width, height } = this.calculateImageAspectRatio(imageData.width, imageData.height, maxWidth, maxHeight);
 
-      imageContainer.style.width = `${width}px`;
-      imageContainer.style.height = `${height}px`;
+      imageContainer.style.maxWidth = `${width}px`;
+      imageContainer.style.maxHeight = `${height}px`;
       imageContainer.classList.add('overlay__image-load'); // Add the "loading" animation
 
       setTimeout(() => {
         imageContainer.classList.remove('overlay__image-load'); // Remove the "loading" animation
 
         // Fade in the image description
+        imageDescription.textContent = imageData.caption;
         imageDescription.classList.remove('fade-out');
         imageDescription.classList.add('fade-in');
 
@@ -184,8 +186,8 @@ class ImageGalleryLightbox extends HTMLElement {
       maxWidthGutter = 200;
       maxHeightGutter = 200;
     } else {
-      maxWidthGutter = 200;
-      maxHeightGutter = 200;
+      maxWidthGutter = 100;
+      maxHeightGutter = 100;
     }
 
     const ratio = Math.min((maxWidth - maxWidthGutter) / imageWidth, (maxHeight - maxHeightGutter) / imageHeight);
