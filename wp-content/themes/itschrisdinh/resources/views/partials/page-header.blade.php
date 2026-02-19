@@ -1,3 +1,3 @@
 <div class="page-header">
-  <h1 class="heading-lg">{!! $title !!}</h1>
+  <h1 class="site-name-base">{!! $title !!}</h1>
 </div>

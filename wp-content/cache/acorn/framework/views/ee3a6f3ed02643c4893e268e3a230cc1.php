@@ -34,7 +34,7 @@
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
       </div>
-      <div class="splide__custom-pagination container text-center bottom-27.5 absolute z-1 text-white text-base <?php echo e($customPaginationShowOn); ?>"></div>
+      <div class="splide__custom-pagination container text-center bottom-27.5 absolute z-1 text-white copy-base <?php echo e($customPaginationShowOn); ?>"></div>
       <div class="splide__pagination text-white"></div>
     </div>
 </splide-slider>

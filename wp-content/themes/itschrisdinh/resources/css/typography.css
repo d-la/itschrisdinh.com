@@ -1,36 +1,54 @@
-@utility heading-lg {
+/* Font utilities */
+@utility font-cabin {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+@utility font-dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@utility font-adobe-handwriting {
   font-family: 'adobe-handwriting-ernie', 'Helvetica-Neue', 'sans-serif';
   font-weight: 400;
   font-style: normal;
-  font-size: 2.5rem;
-  line-height: 1.2;
   text-decoration: none !important;
 }
 
-@utility heading-base {
-  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
-
-  @apply font-normal text-6xl tracking-wide;
+/* Sitewide typography classes */
+@utility site-name-base {
+  @apply font-adobe-handwriting text-2xl md:text-3xl;
 }
 
-@utility text-base {
-  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 1.5;
-  text-transform: none;
-  text-decoration: none;
+@utility heading-base {
+  @apply font-cabin font-normal text-3xl md:text-6xl tracking-wide leading-none;
+}
+
+@utility subheader-base {
+  @apply font-cabin font-normal text-2xl md:text-4xl tracking-wide leading-none;
+}
+
+@utility navigation-base {
+  @apply font-cabin font-normal text-3xl md:text-5xl tracking-wide leading-none;
+}
+
+@utility copy-base {
+  @apply font-dm-sans font-normal text-base leading-normal no-underline;
+}
+
+@utility related-post-base {
+  @apply font-dm-sans font-normal text-base md:text-2xl leading-normal no-underline!;
 }
 
 @utility filter-base {
-  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
-
-  @apply font-normal text-[16px] md:text-[18px] leading-[1.2] md:leading-normal;
+  @apply font-dm-sans font-normal text-[16px] md:text-[18px] leading-[1.2] md:leading-normal;
 }
 
 @utility cta-base {
-  font-family: 'DM Sans', 'Helvetica-Neue', 'sans-serif';
-
-  @apply font-normal text-[16px] leading-normal;
+  @apply font-dm-sans font-normal text-[16px] leading-normal;
 }

@@ -1,5 +1,5 @@
-<header class="banner relative header container min-h-[150px] flex justify-between items-center z-50">
-  <a href="<?php echo e(home_url('/')); ?>" class="header__website-logo brand component heading-lg text-3xl md:text-4xl lg:text-5xl text-white mt-[10px]">
+<header class="banner relative header container min-h-[100px] md:min-h-[150px] flex justify-between items-center z-50">
+  <a href="<?php echo e(home_url('/')); ?>" class="header__website-logo brand component site-name-base text-3xl md:text-4xl lg:text-5xl text-white mt-[10px]">
       Chris D.
   </a>
 
@@ -21,7 +21,7 @@
               <li class="nav-item mb-6" data-image="<?php echo e($menuItem->navigation_image); ?>">
                 <a
                   href="<?php echo e($menuItem->url); ?>"
-                  class="inline-block text-5xl lg:text-5xl transition-transform duration-300 ease-in-out no-underline! hover:scale-110 focus:scale-110 focus-within:scale-110"
+                  class="inline-block navigation-base transition-transform duration-300 ease-in-out no-underline! hover:scale-110 focus:scale-110 focus-within:scale-110"
                   target="<?php echo e($shouldOpenInNewTab ?: '_self'); ?>"
                   >
                     <?php echo e($menuItem->title); ?>
@@ -35,7 +35,7 @@
               <li>
                 <a
                   href="<?php echo e($instagramLink['url']); ?>"
-                  class="text-2xl md:text-4xl text-base transition-transform duration-300 ease-in-out group"
+                  class="text-2xl md:text-4xl copy-base transition-transform duration-300 ease-in-out group"
                   target="<?php echo e($instagramLink['target'] ?: '_self'); ?>"
                   aria-label="View Chris Dinh's instagram account"
                   >
@@ -50,7 +50,7 @@
             <?php endif; ?>
             <?php if(!empty($emailAddress)): ?>
               <li>
-                <a href="mailto:<?php echo e($emailAddress); ?>" class="text-2xl md:text-4xl text-base transition-transform duration-300 ease-in-out group" aria-label="Email Chris Dinh">
+                <a href="mailto:<?php echo e($emailAddress); ?>" class="text-2xl md:text-4xl copy-base transition-transform duration-300 ease-in-out group" aria-label="Email Chris Dinh">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 group-hover:scale-105 group-focus:scale-105 group-focus-within:scale-105 transition-all duration-300">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                   </svg>

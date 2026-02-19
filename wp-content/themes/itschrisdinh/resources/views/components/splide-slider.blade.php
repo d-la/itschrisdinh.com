@@ -34,7 +34,7 @@
           @endforeach
         </ul>
       </div>
-      <div class="splide__custom-pagination container text-center bottom-27.5 absolute z-1 text-white text-base {{ $customPaginationShowOn }}"></div>
+      <div class="splide__custom-pagination container text-center bottom-27.5 absolute z-1 text-white copy-base {{ $customPaginationShowOn }}"></div>
       <div class="splide__pagination text-white"></div>
     </div>
 </splide-slider>
