@@ -4,16 +4,16 @@
   <article @php(post_class('h-entry'))>
     <header class="container pb-5">
       @unless (empty($thumbnailData['url']))
-        <img src="{{ $thumbnailData['url'] }}" class="rounded-[10px]" alt="@unless (empty($thumbnailData['alt'])) {{ $thumbnailData['alt']}} @endunless">
+        <img src="{{ $thumbnailData['url'] }}" class="rounded-[10px] scroll-trigger animate--slide-in" alt="@unless (empty($thumbnailData['alt'])) {{ $thumbnailData['alt']}} @endunless">
       @endunless
-      <h1 class="heading-base my-4">
+      <h1 class="heading-base my-4 scroll-trigger animate--slide-in">
         {!! $title !!}
       </h1>
 
       @include('partials.entry-meta')
     </header>
 
-    <div class="e-content container [&_p]:copy-base [&_h2]:subheader-base">
+    <div class="e-content container [&_p]:copy-base [&_h2]:subheader-base scroll-trigger animate--slide-in">
       @php(the_content())
     </div>
 

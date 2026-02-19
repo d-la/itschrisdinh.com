@@ -2,7 +2,7 @@
   @unless (empty($sliderId))
       id="{{ $sliderId }}"
   @endunless
-  class="@unless (empty($sliderSettings['slider_classes'])) {{ $sliderSettings['slider_classes'] }} @endunless splide"
+  class="@unless (empty($sliderSettings['slider_classes'])) {{ $sliderSettings['slider_classes'] }} @endunless splide scroll-trigger animate--slide-in"
   @if (!empty($sliderAcfJSONData) && json_encode($sliderAcfJSONData))
   data-splide="{{ json_encode($sliderAcfJSONData) }}"
   @endif

@@ -1,7 +1,7 @@
 <?php if (! ( empty($galleryItems) )): ?>
   <image-gallery id="gallery" class="container image-gallery py-10 flex flex-wrap flex-row gap-[13px] justify-start">
     <?php $__currentLoopData = $galleryItems; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-      <button class="image-gallery__item appearance-none basis-[calc(50%-10px)] md:basis-[calc(33.333%-10px)] lg:basis-[calc(25%-10px)] group cursor-pointer overflow-hidden mix" data-collections="<?php echo e($item['filters']); ?>">
+      <button class="image-gallery__item appearance-none basis-[calc(50%-10px)] md:basis-[calc(33.333%-10px)] lg:basis-[calc(25%-10px)] group cursor-pointer overflow-hidden mix" data-cascade data-collections="<?php echo e($item['filters']); ?>">
         <img
           data-index="<?php echo e($index); ?>"
           src="<?php echo e($item['url']); ?>"

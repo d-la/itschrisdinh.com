@@ -2,9 +2,9 @@
   <article <?php (post_class('h-entry')); ?>>
     <header class="container pb-5">
       <?php if (! (empty($thumbnailData['url']))): ?>
-        <img src="<?php echo e($thumbnailData['url']); ?>" class="rounded-[10px]" alt="<?php if (! (empty($thumbnailData['alt']))): ?> <?php echo e($thumbnailData['alt']); ?> <?php endif; ?>">
+        <img src="<?php echo e($thumbnailData['url']); ?>" class="rounded-[10px] scroll-trigger animate--slide-in" alt="<?php if (! (empty($thumbnailData['alt']))): ?> <?php echo e($thumbnailData['alt']); ?> <?php endif; ?>">
       <?php endif; ?>
-      <h1 class="heading-base my-4">
+      <h1 class="heading-base my-4 scroll-trigger animate--slide-in">
         <?php echo $title; ?>
 
       </h1>
@@ -12,7 +12,7 @@
       <?php echo $__env->make('partials.entry-meta', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     </header>
 
-    <div class="e-content container [&_p]:copy-base [&_h2]:subheader-base">
+    <div class="e-content container [&_p]:copy-base [&_h2]:subheader-base scroll-trigger animate--slide-in">
       <?php (the_content()); ?>
     </div>
 

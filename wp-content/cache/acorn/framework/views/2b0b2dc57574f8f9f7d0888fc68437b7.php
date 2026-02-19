@@ -1,4 +1,4 @@
-<time class="dt-published copy-base" datetime="<?php echo e(get_post_time('c', true)); ?>">
+<time class="dt-published copy-base scroll-trigger animate--slide-in" datetime="<?php echo e(get_post_time('c', true)); ?>">
   <?php echo e(get_the_date()); ?>
 
 </time>

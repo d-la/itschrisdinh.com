@@ -1,0 +1,61 @@
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-trigger.animate--fade-in:not(.image-gallery__item),
+  .scroll-trigger.animate--slide-in:not(.image-gallery__item) {
+    opacity: 0.01;
+  }
+
+  .scroll-trigger.animate--slide-in {
+    transform: translateY(2rem);
+  }
+
+  .scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {
+    opacity: 1;
+    animation: var(--animation-fade-in);
+  }
+
+  .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in {
+    animation: var(--animation-slide-in);
+    animation-delay: calc(var(--animation-order) * 75ms);
+  }
+
+  .scroll-trigger:not(.scroll-trigger--offscreen).animate--slide-in-gallery-item {
+    animation: var(--animation-slide-ingallery-item);
+    animation-delay: calc(var(--animation-order) * 75ms);
+  }
+
+  .scroll-trigger:not(.scroll-trigger--offscreen).scroll-trigger--cancel {
+    opacity: 1;
+    animation: none;
+    transition: none;
+    transform: none;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(2rem);
+      opacity: 0.01;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInGalleryItem {
+    from {
+      transform: translateY(2rem);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0.01;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

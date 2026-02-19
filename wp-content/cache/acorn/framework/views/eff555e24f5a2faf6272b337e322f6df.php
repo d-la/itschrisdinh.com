@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
   <header class="gallery-header container flex flex-col justify-start items-start">
     <div class="gallery-header__heading">
-      <h1 class="block text-left heading-base">Gallery</h1>
+      <h1 class="block text-left heading-base scroll-trigger animate--slide-in">Gallery</h1>
     </div>
 
     <?php if (isset($component)) { $__componentOriginal07bb736a3f2e5329f1db2eb31ecbbd79 = $component; } ?>

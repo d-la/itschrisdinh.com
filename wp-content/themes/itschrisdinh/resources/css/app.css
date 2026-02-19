@@ -15,6 +15,16 @@
 @import "./gallery-collections.css";
 @import "./image-gallery-lightbox.css";
 @import "./slider.css";
+@import "./animations.css";
+
+:root {
+  --duration: 600ms;
+  --duration-extended: 3s;
+  --ease-out-slow: cubic-bezier(0, 0, 0.3, 1);
+  --animation-slide-in: slideIn var(--duration) var(--ease-out-slow) forwards;
+  --animation-fade-in: fadeIn var(--duration) var(--ease-out-slow);
+  --animation-slide-ingallery-item: slideInGalleryItem  var(--duration) var(--ease-out-slow) forwards;
+}
 
 /* Prevent layout shift when the body has the .menu-overlay-active class */
 html {

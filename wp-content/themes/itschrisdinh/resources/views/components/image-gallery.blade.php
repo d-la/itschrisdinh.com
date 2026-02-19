@@ -1,7 +1,7 @@
 @unless ( empty($galleryItems) )
   <image-gallery id="gallery" class="container image-gallery py-10 flex flex-wrap flex-row gap-[13px] justify-start">
     @foreach ($galleryItems as $index => $item)
-      <button class="image-gallery__item appearance-none basis-[calc(50%-10px)] md:basis-[calc(33.333%-10px)] lg:basis-[calc(25%-10px)] group cursor-pointer overflow-hidden mix" data-collections="{{ $item['filters'] }}">
+      <button class="image-gallery__item appearance-none basis-[calc(50%-10px)] md:basis-[calc(33.333%-10px)] lg:basis-[calc(25%-10px)] group cursor-pointer overflow-hidden mix" data-cascade data-collections="{{ $item['filters'] }}">
         <img
           data-index="{{ $index }}"
           src="{{ $item['url'] }}"

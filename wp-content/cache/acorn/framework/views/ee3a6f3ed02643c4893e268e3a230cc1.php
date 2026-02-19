@@ -2,7 +2,7 @@
   <?php if (! (empty($sliderId))): ?>
       id="<?php echo e($sliderId); ?>"
   <?php endif; ?>
-  class="<?php if (! (empty($sliderSettings['slider_classes']))): ?> <?php echo e($sliderSettings['slider_classes']); ?> <?php endif; ?> splide"
+  class="<?php if (! (empty($sliderSettings['slider_classes']))): ?> <?php echo e($sliderSettings['slider_classes']); ?> <?php endif; ?> splide scroll-trigger animate--slide-in"
   <?php if(!empty($sliderAcfJSONData) && json_encode($sliderAcfJSONData)): ?>
   data-splide="<?php echo e(json_encode($sliderAcfJSONData)); ?>"
   <?php endif; ?>
