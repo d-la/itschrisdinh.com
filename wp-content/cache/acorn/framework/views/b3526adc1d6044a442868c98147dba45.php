@@ -19,10 +19,9 @@
     <?php if (! (empty($relatedPosts))): ?>
       <div class="related-articles container py-10">
         <h2 class="subheader-base pb-5 text-center">You May Also Like</h2>
-
-        <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
           <?php $__currentLoopData = $relatedPosts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php echo $__env->make('partials.related-post-card', ['post' => $post], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+            <?php echo $__env->make('partials.related-blog-post-card', ['data' => $post, 'cardType' => 'related'], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
       </div>

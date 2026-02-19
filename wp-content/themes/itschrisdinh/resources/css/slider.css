@@ -1,0 +1,13 @@
+.splide__pagination {
+  @apply -bottom-5;
+
+  .splide__pagination__page {
+    @apply border border-solid border-white bg-transparent opacity-100 transition-all duration-300 hover:bg-white focus:bg-white focus-within:bg-white;
+  }
+
+  .splide__pagination__page.is-active {
+    @apply opacity-100 bg-white border-white;
+
+    transform: scale(1);
+  }
+}

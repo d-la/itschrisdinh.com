@@ -1,13 +1,13 @@
 <splide-slider
-  <?php if (! (empty($sliderSettings['slider_id']))): ?>
-      id="<?php echo e($sliderSettings['slider_id']); ?>"
+  <?php if (! (empty($sliderId))): ?>
+      id="<?php echo e($sliderId); ?>"
   <?php endif; ?>
   class="<?php if (! (empty($sliderSettings['slider_classes']))): ?> <?php echo e($sliderSettings['slider_classes']); ?> <?php endif; ?> splide"
   <?php if(!empty($sliderAcfJSONData) && json_encode($sliderAcfJSONData)): ?>
   data-splide="<?php echo e(json_encode($sliderAcfJSONData)); ?>"
   <?php endif; ?>
   <?php if($sliderSettings['custom_pagination']): ?>
-    data-custom-pagination="<?= $sliderSettings['custom_pagination'] ? 'true' : 'false'; ?>"
+    data-custom-pagination="<?= $sliderSettings['custom_pagination'] === true ? 'true' : 'false'; ?>"
   <?php endif; ?>
   <?php if (! (empty($sliderCustomSettings['mobile']))): ?>
     data-mobile-custom-settings="<?php echo e($sliderCustomSettings['mobile']); ?>"

@@ -1,13 +1,13 @@
 <splide-slider
-  @unless (empty($sliderSettings['slider_id']))
-      id="{{ $sliderSettings['slider_id'] }}"
+  @unless (empty($sliderId))
+      id="{{ $sliderId }}"
   @endunless
   class="@unless (empty($sliderSettings['slider_classes'])) {{ $sliderSettings['slider_classes'] }} @endunless splide"
   @if (!empty($sliderAcfJSONData) && json_encode($sliderAcfJSONData))
   data-splide="{{ json_encode($sliderAcfJSONData) }}"
   @endif
   @if ($sliderSettings['custom_pagination'])
-    data-custom-pagination="<?= $sliderSettings['custom_pagination'] ? 'true' : 'false'; ?>"
+    data-custom-pagination="<?= $sliderSettings['custom_pagination'] === true ? 'true' : 'false'; ?>"
   @endif
   @unless (empty($sliderCustomSettings['mobile']))
     data-mobile-custom-settings="{{ $sliderCustomSettings['mobile'] }}"

@@ -20,10 +20,9 @@
     @unless (empty($relatedPosts))
       <div class="related-articles container py-10">
         <h2 class="subheader-base pb-5 text-center">You May Also Like</h2>
-
-        <div class="flex flex-col md:flex-row justify-center items-center">
+        <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
           @foreach ($relatedPosts as $post)
-            @include('partials.related-post-card', ['post' => $post])
+            @include('partials.related-blog-post-card', ['data' => $post, 'cardType' => 'related'])
           @endforeach
         </div>
       </div>

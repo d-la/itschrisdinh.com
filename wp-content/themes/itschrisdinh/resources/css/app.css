@@ -14,6 +14,7 @@
 @import "./navigation.css";
 @import "./gallery-collections.css";
 @import "./image-gallery-lightbox.css";
+@import "./slider.css";
 
 /* Prevent layout shift when the body has the .menu-overlay-active class */
 html {

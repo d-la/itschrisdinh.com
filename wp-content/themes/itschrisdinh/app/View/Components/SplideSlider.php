@@ -11,6 +11,7 @@ class SplideSlider extends Component {
     public $slideViewTemplateData = '';
     public $acfPostId = '';
     public $sliderSectionClasses;
+    public $sliderId = '';
 
     public $sliderCustomSettings = [];
     public $sliderAcfJSONData = '';
@@ -47,6 +48,8 @@ class SplideSlider extends Component {
         $this->acfPostId = $acfPostId;
 
         $this->sliderSettings = get_field( $sliderSettingsAcfName, $acfPostId );
+
+        $this->sliderId = (is_array($this->sliderSettings) && array_key_exists('slider_id', $this->sliderSettings) && !empty($this->sliderSettings['slider_id'])) ? $this->sliderSettings['slider_id'] : 'slider-' . uniqid();
 
         $this->sliderAcfJSONData = $this->setUpSliderJSONSettings();
         $this->sliderCustomSettings = $this->formatCustomSliderSettings();

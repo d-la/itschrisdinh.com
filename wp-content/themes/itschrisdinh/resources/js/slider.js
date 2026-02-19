@@ -12,24 +12,24 @@ class Slider extends HTMLElement {
   disconnectedCallback() {
   }
 
-  initiateSplideSlider = ( selector = '.splide' ) => {
-    const sliders = document.querySelectorAll(`${selector}`);
+  initiateSplideSlider = () => {
+    const slider = this;
 
-    // The gallery will have a thumbnail slider that needs to be syncd. do not call this by default on that page
-    if ( sliders.length > 0 && !document.body.classList.contains('gallery') ) {
-      sliders.forEach( slider => {
-        let sliderSettingsJSON = slider.dataset.splide ? JSON.parse(slider.dataset.splide) : {};
-        sliderSettingsJSON = this.handleMergingCustomSettings(slider, sliderSettingsJSON);
-        const sliderId = slider.id;
+    if (!slider) {
+      console.error('Slider not found - unable to initialize');
+      return;
+    }
 
-        if ( sliderId && Object.keys(sliderSettingsJSON).length > 0 ) {
-          const splide = new Splide(`#${sliderId}`, sliderSettingsJSON).mount();
+    let sliderSettingsJSON = slider.dataset.splide ? JSON.parse(slider.dataset.splide) : {};
+    sliderSettingsJSON = this.handleMergingCustomSettings(slider, sliderSettingsJSON);
 
-          if (slider.dataset.customPagination === 'true') {
-            this.applyCustomPagination(slider, splide);
-          }
-        }
-      });
+    const sliderId = slider.id;
+
+    if ( sliderId && Object.keys(sliderSettingsJSON).length > 0 ) {
+      const splide = new Splide(`#${sliderId}`, sliderSettingsJSON).mount();
+      if (slider.dataset.customPagination === 'true') {
+        this.applyCustomPagination(slider, splide);
+      }
     }
   }
 
