@@ -58,36 +58,37 @@ jobs:
         run: yarn build
 
       # ---------------------------
-      # Deploy Plugins via SFTP
+      # Deploy Plugins via SFTP using lftp
       # ---------------------------
       - name: Deploy Plugins via SFTP
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
-          source: "wp-content/plugins/*"
-          target: "${{ secrets.SFTP_ROOT }}/wp-content/plugins/"
-          strip_components: 0
+        run: |
+          lftp -u "${{ secrets.SFTP_USERNAME }},${{ secrets.SFTP_PASSWORD }}" \
+          -p ${{ secrets.SFTP_PORT }} sftp://${{ secrets.SFTP_SERVER }} <<EOF
+          set sftp:auto-confirm yes
+          mirror -R --delete \
+            --exclude-glob node_modules \
+            --exclude-glob .git \
+            --exclude-glob .github \
+            wp-content/plugins \
+            ${{ secrets.SFTP_ROOT }}/wp-content/plugins
+          quit
+          EOF
 
       # ---------------------------
-      # Deploy Theme via SFTP
+      # Deploy Theme via SFTP using lftp
       # ---------------------------
       - name: Deploy Theme via SFTP
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
-          source: "wp-content/themes/itschrisdinh/*"
-          target: "${{ secrets.SFTP_ROOT }}/wp-content/themes/itschrisdinh/"
-          strip_components: 0
-          recursive: true
-          exclude: |
-            **/node_modules/**
-            **/.git/**
-            **/.github/**
-            **/src/**
-            **/*.map
+        run: |
+          lftp -u "${{ secrets.SFTP_USERNAME }},${{ secrets.SFTP_PASSWORD }}" \
+          -p ${{ secrets.SFTP_PORT }} sftp://${{ secrets.SFTP_SERVER }} <<EOF
+          set sftp:auto-confirm yes
+          mirror -R --delete \
+            --exclude-glob node_modules \
+            --exclude-glob .git \
+            --exclude-glob .github \
+            --exclude-glob src \
+            --exclude-glob "*.map" \
+            wp-content/themes/itschrisdinh \
+            ${{ secrets.SFTP_ROOT }}/wp-content/themes/itschrisdinh
+          quit
+          EOF
