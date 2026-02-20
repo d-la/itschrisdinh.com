@@ -1,0 +1,80 @@
+name: Deploy WordPress Theme & Plugins
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------------------
+      # Setup PHP for Composer
+      # ---------------------------
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer
+
+      - name: Install PHP dependencies (Composer)
+        run: composer install --no-dev --optimize-autoloader
+
+      # ---------------------------
+      # Setup Node for Theme Build
+      # ---------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install theme dependencies
+        working-directory: wp-content/themes/itschrisdinh
+        run: yarn install --frozen-lockfile
+
+      - name: Build theme
+        working-directory: wp-content/themes/itschrisdinh
+        run: yarn build
+
+      # ---------------------------
+      # Deploy Plugins via SFTP
+      # ---------------------------
+      - name: Deploy Plugins (SFTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          protocol: sftp
+          server: ${{ secrets.SFTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          local-dir: wp-content/plugins/
+          server-dir: /itschrisdinh.atwebpages.com/wp-content/plugins/
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+
+      # ---------------------------
+      # Deploy Theme via SFTP
+      # ---------------------------
+      - name: Deploy Theme (SFTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          protocol: sftp
+          server: ${{ secrets.SFTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          local-dir: wp-content/themes/itschrisdinh/
+          server-dir: /itschrisdinh.atwebpages.com/wp-content/themes/itschrisdinh/
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+            **/src/**
+            **/*.map
