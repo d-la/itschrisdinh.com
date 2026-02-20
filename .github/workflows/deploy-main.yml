@@ -58,6 +58,12 @@ jobs:
         run: yarn build
 
       # ---------------------------
+      # Install lftp for SFTP deploy
+      # ---------------------------
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      # ---------------------------
       # Deploy Plugins via SFTP using lftp
       # ---------------------------
       - name: Deploy Plugins via SFTP
