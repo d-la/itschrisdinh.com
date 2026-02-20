@@ -1,0 +1,31 @@
+{
+    "name": "d-la/itschrisdinh",
+    "type": "project",
+    "require": {
+      "wpackagist-plugin/secure-custom-fields": "*",
+      "wpackagist-plugin/wordpress-seo": "*",
+      "wpackagist-plugin/duplicate-page": "*"
+    },
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      }
+    ],
+    "extra": {
+      "installer-paths": {
+        "wp-content/plugins/{$name}/": [
+          "type:wordpress-plugin"
+        ]
+      }
+    },
+    "config": {
+      "allow-plugins": {
+        "composer/installers": true
+      }
+    },
+    "require-dev": {},
+    "minimum-stability": "stable",
+    "prefer-stable": true
+  }
+  
