@@ -36,7 +36,7 @@ class ImageGalleryLightbox extends HTMLElement {
           width: parseInt(image?.dataset?.width),
           height: parseInt(image?.dataset?.height),
           caption: image?.dataset?.caption,
-          src: image?.src,
+          src: image?.dataset?.fullUrl,
         }
       });
 
