@@ -4,7 +4,8 @@
     "require": {
       "wpackagist-plugin/secure-custom-fields": "*",
       "wpackagist-plugin/wordpress-seo": "*",
-      "wpackagist-plugin/duplicate-page": "*"
+      "wpackagist-plugin/duplicate-page": "*",
+      "wpackagist-plugin/wp-super-cache": "*"
     },
     "repositories": [
       {
