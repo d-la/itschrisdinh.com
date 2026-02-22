@@ -10,13 +10,13 @@
     data-custom-pagination="<?= $sliderSettings['custom_pagination'] === true ? 'true' : 'false'; ?>"
   @endif
   @unless (empty($sliderCustomSettings['mobile']))
-    data-mobile-custom-settings="{{ $sliderCustomSettings['mobile'] }}"
+    data-mobile-custom-settings="{{ json_encode($sliderCustomSettings['mobile']) }}"
   @endunless
   @unless (empty($sliderCustomSettings['tablet']))
-    data-tablet-custom-settings="{{ $sliderCustomSettings['tablet'] }}"
+    data-tablet-custom-settings="{{ json_encode($sliderCustomSettings['tablet']) }}"
   @endunless
   @unless (empty($sliderCustomSettings['desktop']))
-    data-desktop-custom-settings="{{ $sliderCustomSettings['desktop'] }}"
+    data-desktop-custom-settings="{{ json_encode($sliderCustomSettings['desktop']) }}"
   @endunless
   >
     <div class="flex justify-center items-center relative">
