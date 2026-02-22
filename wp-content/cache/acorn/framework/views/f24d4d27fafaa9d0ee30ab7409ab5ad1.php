@@ -4,11 +4,10 @@
       <button class="image-gallery__item appearance-none basis-[calc(50%-10px)] md:basis-[calc(33.333%-10px)] lg:basis-[calc(25%-10px)] group cursor-pointer overflow-hidden mix" data-cascade data-collections="<?php echo e($item['filters']); ?>">
         <img
           data-index="<?php echo e($index); ?>"
-          srcset="<?php echo e(wp_get_attachment_image_srcset($item['ID'])); ?>"
+          src="<?php echo e($item['url']); ?>"
           alt="<?php echo e($item['alt']); ?>"
           data-width="<?php echo e($item['width']); ?>"
           data-height="<?php echo e($item['height']); ?>"
-          data-full-url="<?php echo e($item['url']); ?>"
           class="image-gallery__image w-full h-full aspect-square object-cover group-hover:scale-110 group-focus:scale-110 group-focus-within:scale-110 transition-all duration-300 ease focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 focus-within:ring-4 focus-within:ring-blue-500 focus-within:ring-offset-2"
           loading="lazy"
           data-caption="<?php echo e($item['caption']); ?>"

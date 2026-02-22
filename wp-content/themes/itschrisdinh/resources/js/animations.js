@@ -12,9 +12,6 @@ const onIntersection = (elements, observer) => {
           elementTarget.setAttribute('style', `--animation-order: ${index};`);
       }
       observer.unobserve(elementTarget);
-    } else {
-      element.target.classList.add(globalConstants.SCROLL_OFFSCREEN_CLASS);
-      element.target.classList.remove(globalConstants.SCROLL_CANCEL_CLASS);
     }
   });
 }
